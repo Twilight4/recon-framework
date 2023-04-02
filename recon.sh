@@ -8,7 +8,7 @@ nmap_scan()
 }
 dirsearch_scan()
 {
-  $PATH_TO_DIRSEARCH/dirsearch.py -u $DOMAIN -e php --simple-report=$DIRECTORY/dirsearch
+  $PATH_TO_DIRSEARCH/dirsearch.py -u $DOMAIN -e php --simple=$DIRECTORY/dirsearch
   echo "The results of dirsearch scan are stored in $DIRECTORY/dirsearch."
 }
 crt_scan()
