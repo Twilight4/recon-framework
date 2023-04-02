@@ -46,16 +46,16 @@ esac
 echo "Generating recon report for $DOMAIN..."
 TODAY=$(date)
 echo "This scan was created on $TODAY" > $DIRECTORY/report
-if [ -f $DIRECTORY/nmap ];then 2
-echo "Results for Nmap:" >> $DIRECTORY/report
-grep -E "^\s*\S+\s+\S+\s+\S+\s*$" $DIRECTORY/nmap >> $DIRECTORY/report
+  if [ -f $DIRECTORY/nmap ];then
+  echo "Results for Nmap:" >> $DIRECTORY/report
+  grep -E "^\s*\S+\s+\S+\s+\S+\s*$" $DIRECTORY/nmap >> $DIRECTORY/report
 fi
-if [ -f $DIRECTORY/dirsearch ];then 3
-echo "Results for Dirsearch:" >> $DIRECTORY/report
-cat $DIRECTORY/dirsearch >> $DIRECTORY/report
+  if [ -f $DIRECTORY/dirsearch ];then
+  echo "Results for Dirsearch:" >> $DIRECTORY/report
+  cat $DIRECTORY/dirsearch >> $DIRECTORY/report
 fi
-if [ -f $DIRECTORY/crt ];then 4
-echo "Results for crt.sh:" >> $DIRECTORY/report
-jq -r ".[] | .name_value" $DIRECTORY/crt >> $DIRECTORY/report
+  if [ -f $DIRECTORY/crt ];then
+  echo "Results for crt.sh:" >> $DIRECTORY/report
+  jq -r ".[] | .name_value" $DIRECTORY/crt >> $DIRECTORY/report
 fi
 done 
