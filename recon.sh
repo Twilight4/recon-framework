@@ -1,5 +1,5 @@
 #!/bin/bash
-PATH_TO_DIRSEARCH="/Users/vickieli/tools/dirsearch"
+PATH_TO_DIRSEARCH="/opt/tools/dirsearch"
 DOMAIN=$1
 DIRECTORY=${DOMAIN}_recon
 echo "Creating directory $DIRECTORY."
